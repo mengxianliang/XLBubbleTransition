@@ -6,7 +6,7 @@ iOS UINavigation 转场动画
 * 适用于UINavigation的转场动画，在Push和Pop这两个动作是显示。
 ### 显示效果
 
-![image](https://github.com/mengxianliang/XLBubbleTransition/blob/master/GIF/1.gif)
+<img src="https://github.com/mengxianliang/XLBubbleTransition/blob/master/GIF/1.gif" width=300 height=538 />
 
 ### 使用方法
 
