@@ -10,8 +10,7 @@ iOS UINavigation 转场动画
 
 ### 使用方法
 
-* 在ViewController中设置push和pop的转场动画
-
+* 在ViewController中设置push和pop的转场动画,初始化时需要设置动画的起始范围和结束范围.
 ```objc
     self.xl_pushTranstion = [XLBubblePushTransition transitionWithAnchorRect:button.frame];
     self.xl_popTranstion = [XLBubblePopTransition transitionWithAnchorRect:button.frame];
