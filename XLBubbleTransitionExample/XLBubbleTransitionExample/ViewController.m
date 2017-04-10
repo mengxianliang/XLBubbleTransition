@@ -21,6 +21,15 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+//    //示例label
+//    UILabel *label = [[UILabel alloc] initWithFrame:self.view.bounds];
+//    label.textColor = [UIColor whiteColor];
+//    label.text = @"ViewController A";
+//    label.textAlignment = NSTextAlignmentCenter;
+//    label.font = [UIFont boldSystemFontOfSize:30];
+//    label.textColor = [UIColor colorWithRed:189/255.0 green:79/255.0 blue:70/255.0 alpha:1];
+//    [self.view addSubview:label];
+    
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     button.center = CGPointMake(CGRectGetMidX(self.view.frame), CGRectGetMaxY(self.view.frame) - 60);
     button.layer.cornerRadius = 25.0f;

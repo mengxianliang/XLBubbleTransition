@@ -15,8 +15,18 @@
 @implementation ViewController1
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor colorWithRed:189/255.0 green:79/255.0 blue:70/255.0 alpha:1];
+    //示例label
+    UILabel *label = [[UILabel alloc] initWithFrame:self.view.bounds];
+    label.textColor = [UIColor whiteColor];
+    label.text = @"Hello!";
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont boldSystemFontOfSize:40];
+    label.textColor = [UIColor whiteColor];
+    [self.view addSubview:label];
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     [button setImage:[UIImage imageNamed:@"Close_icn"] forState:UIControlStateNormal];

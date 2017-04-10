@@ -13,6 +13,8 @@
     CGRect _startRect;
     
     NSObject<UIViewControllerContextTransitioning> *_transitionContext;
+    
+    CAShapeLayer *_maskLayer;
 }
 @end
 
@@ -26,11 +28,16 @@
 }
 
 -(NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext{
-    return 0.35f;
+    return 0.3f;
 }
 
 -(void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext{
     
+    [self showRoundMaskAnimationTo:transitionContext];
+    [self showScaleAnimationTo:transitionContext];
+}
+
+-(void)showRoundMaskAnimationTo:(id<UIViewControllerContextTransitioning>)transitionContext{
     _transitionContext = transitionContext;
     
     UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
@@ -40,17 +47,24 @@
     [contView addSubview:fromView];
     [contView addSubview:toView];
     
+    //创建一个 CAShapeLayer 来负责展示圆形遮盖
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+//    toView.layer.mask = maskLayer;
+    maskLayer.bounds = fromView.layer.bounds;
+    maskLayer.position = fromView.layer.position;
+    maskLayer.fillColor = toView.backgroundColor.CGColor;
+    [fromView.layer addSublayer:maskLayer];
+    _maskLayer = maskLayer;
+    
     //开始的圆环
     UIBezierPath *startPath =  [UIBezierPath bezierPathWithOvalInRect:_startRect];
-    
     //结束圆环
     CGFloat radius = [self radiusOfBubbleInView:toView startPoint:CGPointMake(CGRectGetMidX(_startRect), CGRectGetMidY(_startRect))];
     UIBezierPath *finalPath = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(_startRect, - radius, - radius)];
-    //创建一个 CAShapeLayer 来负责展示圆形遮盖
-    CAShapeLayer *maskLayer = [CAShapeLayer layer];
-    maskLayer.path = finalPath.CGPath; //将它的 path 指定为最终的 path 来避免在动画完成后会回弹
-    toView.layer.mask = maskLayer;
     
+    //圆形放大的动画
+    //将它的 path 指定为最终的 path 来避免在动画完成后会回弹
+    maskLayer.path = finalPath.CGPath;
     CABasicAnimation *maskLayerAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
     maskLayerAnimation.fromValue = (__bridge id)(startPath.CGPath);
     maskLayerAnimation.toValue = (__bridge id)((finalPath.CGPath));
@@ -58,6 +72,29 @@
     maskLayerAnimation.timingFunction = [CAMediaTimingFunction  functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     maskLayerAnimation.delegate = self;
     [maskLayer addAnimation:maskLayerAnimation forKey:@"path"];
+}
+
+-(void)showScaleAnimationTo:(id<UIViewControllerContextTransitioning>)transitionContext{
+    
+    UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+    
+    //位移动画
+    toView.layer.position = CGPointMake(CGRectGetMidX(toView.bounds), CGRectGetMidY(toView.bounds));
+    CABasicAnimation *positionAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
+    positionAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(CGRectGetMidX(_startRect), CGRectGetMidY(_startRect))];
+    positionAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(CGRectGetMidX(toView.bounds), CGRectGetMidY(toView.bounds))];
+    positionAnimation.duration = [self transitionDuration:transitionContext];
+    positionAnimation.timingFunction = [CAMediaTimingFunction  functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    [toView.layer addAnimation:positionAnimation forKey:@"position"];
+    
+    //缩放动画
+    toView.transform = CGAffineTransformMakeScale(1, 1);
+    CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    scaleAnimation.fromValue = @(0);
+    scaleAnimation.toValue = @(1);
+    scaleAnimation.duration = [self transitionDuration:transitionContext];
+    scaleAnimation.timingFunction = [CAMediaTimingFunction  functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    [toView.layer addAnimation:scaleAnimation forKey:@"scale"];
 }
 
 //遍历view的四个角 获取最长的半径
@@ -89,6 +126,9 @@
     //清除 fromVC 的 mask
     [_transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey].view.layer.mask = nil;
     [_transitionContext viewControllerForKey:UITransitionContextToViewControllerKey].view.layer.mask = nil;
+    
+    [_maskLayer removeFromSuperlayer];
+    _maskLayer = nil;
 }
 
 +(instancetype)transitionWithAnchorRect:(CGRect)rect{
