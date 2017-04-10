@@ -25,11 +25,10 @@
         _startRect = rect;
     }
     return self;
-
 }
 
 -(NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext{
-    return 0.3f;
+    return 0.35f;
 }
 
 -(void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext{
