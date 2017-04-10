@@ -24,7 +24,7 @@
     label.textColor = [UIColor whiteColor];
     label.text = @"Hello!";
     label.textAlignment = NSTextAlignmentCenter;
-    label.font = [UIFont fontWithName:@"Zapfino" size:40];
+    label.font = [UIFont fontWithName:@"AmericanTypewriter" size:40];
     label.textColor = [UIColor whiteColor];
     [self.view addSubview:label];
     
