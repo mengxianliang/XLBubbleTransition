@@ -207,9 +207,9 @@
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
     //告诉 iOS 这个 transition 完成
     [_transitionContext completeTransition:![_transitionContext transitionWasCancelled]];
-    //清除 fromVC 的 mask
-    [_transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey].view.layer.mask = nil;
-    [_transitionContext viewControllerForKey:UITransitionContextToViewControllerKey].view.layer.mask = nil;
+//    //清除 fromVC 的 mask
+//    [_transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey].view.layer.mask = nil;
+//    [_transitionContext viewControllerForKey:UITransitionContextToViewControllerKey].view.layer.mask = nil;
     //移除遮罩layer
     [_maskLayer removeFromSuperlayer];
     _maskLayer = nil;
