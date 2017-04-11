@@ -14,20 +14,20 @@ iOS ViewController间切换的转场动画
 
 ### 使用方法
 
-#### 以ViewControllerA切换到ViewControllerB为例：
+  以`ViewControllerA`切换到`ViewControllerB`为例：
 
-1、 通过Navigation的Push和Pop进行切换时，在ViewControllerA添加如下代码，设置push和pop设置动画，并设置锚点。
+1、 通过Navigation的Push和Pop进行切换时，在`ViewControllerA`添加如下代码，设置push和pop设置动画，并设置锚点。
 <br>
-首先在ViewControllerA中导入头文件：UIViewController+XLBubbleTransition.h
+  首先在ViewControllerA中导入头文件：UIViewController+XLBubbleTransition.h
 
 ```objc
 self.xl_pushTranstion = [XLBubbleTransition transitionWithAnchorRect:button.frame];
 self.xl_popTranstion = [XLBubbleTransition transitionWithAnchorRect:button.frame];
 ```
 
-2、 通过Present和Dismiss进行切换时，在ViewControllerB中添加如下代码，设置Present和Dismiss设置动画，并设置锚点。
+2、 通过Present和Dismiss进行切换时，在`ViewControllerB`中添加如下代码，设置Present和Dismiss设置动画，并设置锚点。
 <br>
-首先在ViewControllerB中导入头文件：UIViewController+XLBubbleTransition.h
+  首先在ViewControllerB中导入头文件：UIViewController+XLBubbleTransition.h
 
 ```objc
 self.xl_presentTranstion = [XLBubbleTransition transitionWithAnchorRect:button.frame];
