@@ -29,8 +29,8 @@
     [self.view addSubview:label];
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-    [button setImage:[UIImage imageNamed:@"Close_icn"] forState:UIControlStateNormal];
     button.center = CGPointMake(CGRectGetMidX(self.view.frame), CGRectGetMaxY(self.view.frame) - 60);
+    [button setImage:[UIImage imageNamed:@"Close_icn"] forState:UIControlStateNormal];
     [button setBackgroundColor:[UIColor whiteColor]];
     button.layer.cornerRadius = button.bounds.size.width/2.0f;
     [button addTarget:self action:@selector(popMethod) forControlEvents:UIControlEventTouchUpInside];
