@@ -1,5 +1,5 @@
 //
-//  ViewController1.h
+//  ViewController.h
 //  XLBubbleTransitionExample
 //
 //  Created by MengXianLiang on 2017/4/1.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController1 : UIViewController
+@interface ViewControllerA : UIViewController
+
 
 @end
+

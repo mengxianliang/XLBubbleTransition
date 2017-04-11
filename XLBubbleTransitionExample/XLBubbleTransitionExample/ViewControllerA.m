@@ -6,15 +6,15 @@
 //  Copyright © 2017年 MengXianLiang. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "ViewController1.h"
+#import "ViewControllerA.h"
+#import "ViewControllerB.h"
 #import "XLBubbleTransition.h"
 
-@interface ViewController ()
+@interface ViewControllerA ()
 
 @end
 
-@implementation ViewController
+@implementation ViewControllerA
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,8 +34,8 @@
 }
 
 -(void)pushMethod{
-    ViewController1 *vc = [[ViewController1 alloc] init];
-    [self.navigationController pushViewController:vc animated:true];
+    ViewControllerB *vcB = [[ViewControllerB alloc] init];
+    [self.navigationController pushViewController:vcB animated:true];
 }
 
 - (void)didReceiveMemoryWarning {

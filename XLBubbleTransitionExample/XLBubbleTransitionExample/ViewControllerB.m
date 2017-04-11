@@ -6,13 +6,13 @@
 //  Copyright © 2017年 MengXianLiang. All rights reserved.
 //
 
-#import "ViewController1.h"
+#import "ViewControllerB.h"
 
-@interface ViewController1 ()
+@interface ViewControllerB ()
 
 @end
 
-@implementation ViewController1
+@implementation ViewControllerB
 
 - (void)viewDidLoad {
     

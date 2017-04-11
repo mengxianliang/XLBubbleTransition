@@ -11,11 +11,11 @@
 		5E47D5A21E9C712F00A3DD64 /* XLBubbleDismissTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E47D5A11E9C712F00A3DD64 /* XLBubbleDismissTransition.m */; };
 		5ECCEA491E8F76790076E108 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA481E8F76790076E108 /* main.m */; };
 		5ECCEA4C1E8F76790076E108 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA4B1E8F76790076E108 /* AppDelegate.m */; };
-		5ECCEA4F1E8F76790076E108 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA4E1E8F76790076E108 /* ViewController.m */; };
+		5ECCEA4F1E8F76790076E108 /* ViewControllerA.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA4E1E8F76790076E108 /* ViewControllerA.m */; };
 		5ECCEA521E8F76790076E108 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECCEA501E8F76790076E108 /* Main.storyboard */; };
 		5ECCEA541E8F76790076E108 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ECCEA531E8F76790076E108 /* Assets.xcassets */; };
 		5ECCEA571E8F76790076E108 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECCEA551E8F76790076E108 /* LaunchScreen.storyboard */; };
-		5ECCEA601E8F76940076E108 /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA5F1E8F76940076E108 /* ViewController1.m */; };
+		5ECCEA601E8F76940076E108 /* ViewControllerB.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA5F1E8F76940076E108 /* ViewControllerB.m */; };
 		5ECCEA691E8F76E00076E108 /* UIViewController+XLBubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA631E8F76E00076E108 /* UIViewController+XLBubbleTransition.m */; };
 		5ECCEA6A1E8F76E00076E108 /* XLBubblePopTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA651E8F76E00076E108 /* XLBubblePopTransition.m */; };
 		5ECCEA6B1E8F76E00076E108 /* XLBubblePushTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA671E8F76E00076E108 /* XLBubblePushTransition.m */; };
@@ -30,14 +30,14 @@
 		5ECCEA481E8F76790076E108 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5ECCEA4A1E8F76790076E108 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5ECCEA4B1E8F76790076E108 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5ECCEA4D1E8F76790076E108 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5ECCEA4E1E8F76790076E108 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5ECCEA4D1E8F76790076E108 /* ViewControllerA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerA.h; sourceTree = "<group>"; };
+		5ECCEA4E1E8F76790076E108 /* ViewControllerA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerA.m; sourceTree = "<group>"; };
 		5ECCEA511E8F76790076E108 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5ECCEA531E8F76790076E108 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5ECCEA561E8F76790076E108 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5ECCEA581E8F76790076E108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5ECCEA5E1E8F76940076E108 /* ViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
-		5ECCEA5F1E8F76940076E108 /* ViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
+		5ECCEA5E1E8F76940076E108 /* ViewControllerB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerB.h; sourceTree = "<group>"; };
+		5ECCEA5F1E8F76940076E108 /* ViewControllerB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerB.m; sourceTree = "<group>"; };
 		5ECCEA621E8F76E00076E108 /* UIViewController+XLBubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XLBubbleTransition.h"; sourceTree = "<group>"; };
 		5ECCEA631E8F76E00076E108 /* UIViewController+XLBubbleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XLBubbleTransition.m"; sourceTree = "<group>"; };
 		5ECCEA641E8F76E00076E108 /* XLBubblePopTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLBubblePopTransition.h; sourceTree = "<group>"; };
@@ -80,10 +80,10 @@
 			children = (
 				5ECCEA4A1E8F76790076E108 /* AppDelegate.h */,
 				5ECCEA4B1E8F76790076E108 /* AppDelegate.m */,
-				5ECCEA4D1E8F76790076E108 /* ViewController.h */,
-				5ECCEA4E1E8F76790076E108 /* ViewController.m */,
-				5ECCEA5E1E8F76940076E108 /* ViewController1.h */,
-				5ECCEA5F1E8F76940076E108 /* ViewController1.m */,
+				5ECCEA4D1E8F76790076E108 /* ViewControllerA.h */,
+				5ECCEA4E1E8F76790076E108 /* ViewControllerA.m */,
+				5ECCEA5E1E8F76940076E108 /* ViewControllerB.h */,
+				5ECCEA5F1E8F76940076E108 /* ViewControllerB.m */,
 				5ECCEA501E8F76790076E108 /* Main.storyboard */,
 				5ECCEA531E8F76790076E108 /* Assets.xcassets */,
 				5ECCEA551E8F76790076E108 /* LaunchScreen.storyboard */,
@@ -194,9 +194,9 @@
 				5ECCEA6A1E8F76E00076E108 /* XLBubblePopTransition.m in Sources */,
 				5ECCEA6B1E8F76E00076E108 /* XLBubblePushTransition.m in Sources */,
 				5E47D59F1E9C711200A3DD64 /* XLBubblePresentTransition.m in Sources */,
-				5ECCEA601E8F76940076E108 /* ViewController1.m in Sources */,
+				5ECCEA601E8F76940076E108 /* ViewControllerB.m in Sources */,
 				5ECCEA691E8F76E00076E108 /* UIViewController+XLBubbleTransition.m in Sources */,
-				5ECCEA4F1E8F76790076E108 /* ViewController.m in Sources */,
+				5ECCEA4F1E8F76790076E108 /* ViewControllerA.m in Sources */,
 				5ECCEA4C1E8F76790076E108 /* AppDelegate.m in Sources */,
 				5ECCEA491E8F76790076E108 /* main.m in Sources */,
 				5E47D5A21E9C712F00A3DD64 /* XLBubbleDismissTransition.m in Sources */,
