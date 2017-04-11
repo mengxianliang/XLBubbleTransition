@@ -77,9 +77,9 @@ static NSString *XLDismissTransitionKey = @"XLDismissTransitionKey";
 #pragma mark -
 #pragma mark Navigation的Push和Pop转场动画设置
 -(id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC{
-    if (operation == UINavigationControllerOperationPush) {
+    if (operation == UINavigationControllerOperationPush && [fromVC isEqual:self]) {
         return self.xl_pushTranstion;
-    }else if(operation == UINavigationControllerOperationPop) {
+    }else if(operation == UINavigationControllerOperationPop && [toVC isEqual:self]) {
         return self.xl_popTranstion;
     }else{
         return nil;
