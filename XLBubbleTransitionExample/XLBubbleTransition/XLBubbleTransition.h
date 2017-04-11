@@ -12,5 +12,7 @@
 #import "UIViewController+XLBubbleTransition.h"
 #import "XLBubblePopTransition.h"
 #import "XLBubblePushTransition.h"
+#import "XLBubblePresentTransition.h"
+#import "XLBubbleDismissTransition.h"
 
 #endif /* XLBubbleTransition_h */

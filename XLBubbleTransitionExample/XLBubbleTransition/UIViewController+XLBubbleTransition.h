@@ -10,11 +10,16 @@
 
 @class XLBubblePushTransition;
 @class XLBubblePopTransition;
+@class XLBubblePresentTransition;
+@class XLBubbleDismissTransition;
 
-@interface UIViewController (XLBubbleTransition)<UINavigationControllerDelegate>
+@interface UIViewController (XLBubbleTransition)<UINavigationControllerDelegate,UIViewControllerTransitioningDelegate>
 
 @property (nonatomic, retain) XLBubblePushTransition *xl_pushTranstion;
 
 @property (nonatomic, retain) XLBubblePopTransition *xl_popTranstion;
+
+@property (nonatomic, retain) XLBubblePresentTransition *xl_presentTranstion;
+@property (nonatomic, retain) XLBubbleDismissTransition *xl_dismissTranstion;
 
 @end

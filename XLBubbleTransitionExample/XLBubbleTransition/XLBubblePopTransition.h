@@ -12,6 +12,7 @@
 @interface XLBubblePopTransition : NSObject<UIViewControllerAnimatedTransitioning>
 
 -(instancetype)initWithAnchorRect:(CGRect)rect;
+
 +(instancetype)transitionWithAnchorRect:(CGRect)rect;
 
 @end

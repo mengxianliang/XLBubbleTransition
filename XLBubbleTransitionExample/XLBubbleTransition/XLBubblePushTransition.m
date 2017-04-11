@@ -10,7 +10,7 @@
 
 @interface XLBubblePushTransition ()<CAAnimationDelegate>
 {
-    CGRect _startRect;
+    CGRect _anchorRect;
     
     NSObject<UIViewControllerContextTransitioning> *_transitionContext;
     
@@ -22,7 +22,7 @@
 
 -(instancetype)initWithAnchorRect:(CGRect)rect{
     if (self = [super init]) {
-        _startRect = rect;
+        _anchorRect = rect;
     }
     return self;
 }
@@ -33,11 +33,12 @@
 
 -(void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext{
     
-    [self showRoundMaskAnimationTo:transitionContext];
+    [self showBubbleMaskAnimationTo:transitionContext];
     [self showScaleAnimationTo:transitionContext];
 }
 
--(void)showRoundMaskAnimationTo:(id<UIViewControllerContextTransitioning>)transitionContext{
+//显示圆形放大动画
+-(void)showBubbleMaskAnimationTo:(id<UIViewControllerContextTransitioning>)transitionContext{
     _transitionContext = transitionContext;
     
     UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
@@ -57,10 +58,10 @@
     _maskLayer = maskLayer;
     
     //开始的圆环
-    UIBezierPath *startPath =  [UIBezierPath bezierPathWithOvalInRect:_startRect];
+    UIBezierPath *startPath =  [UIBezierPath bezierPathWithOvalInRect:_anchorRect];
     //结束圆环
-    CGFloat radius = [self radiusOfBubbleInView:toView startPoint:CGPointMake(CGRectGetMidX(_startRect), CGRectGetMidY(_startRect))];
-    UIBezierPath *finalPath = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(_startRect, - radius, - radius)];
+    CGFloat radius = [self radiusOfBubbleInView:toView startPoint:CGPointMake(CGRectGetMidX(_anchorRect), CGRectGetMidY(_anchorRect))];
+    UIBezierPath *finalPath = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(_anchorRect, - radius, - radius)];
     
     //圆形放大的动画
     //将它的 path 指定为最终的 path 来避免在动画完成后会回弹
@@ -74,6 +75,7 @@
     [maskLayer addAnimation:maskLayerAnimation forKey:@"path"];
 }
 
+//显示位置和缩放效果
 -(void)showScaleAnimationTo:(id<UIViewControllerContextTransitioning>)transitionContext{
     
     UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
@@ -81,7 +83,7 @@
     //位移动画
     toView.layer.position = CGPointMake(CGRectGetMidX(toView.bounds), CGRectGetMidY(toView.bounds));
     CABasicAnimation *positionAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
-    positionAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(CGRectGetMidX(_startRect), CGRectGetMidY(_startRect))];
+    positionAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(CGRectGetMidX(_anchorRect), CGRectGetMidY(_anchorRect))];
     positionAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(CGRectGetMidX(toView.bounds), CGRectGetMidY(toView.bounds))];
     positionAnimation.duration = [self transitionDuration:transitionContext];
     positionAnimation.timingFunction = [CAMediaTimingFunction  functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
@@ -126,7 +128,7 @@
     //清除 fromVC 的 mask
     [_transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey].view.layer.mask = nil;
     [_transitionContext viewControllerForKey:UITransitionContextToViewControllerKey].view.layer.mask = nil;
-    
+    //移除遮罩layer
     [_maskLayer removeFromSuperlayer];
     _maskLayer = nil;
 }

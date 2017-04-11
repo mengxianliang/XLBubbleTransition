@@ -12,6 +12,7 @@
 @interface XLBubblePushTransition : NSObject<UIViewControllerAnimatedTransitioning>
 
 -(instancetype)initWithAnchorRect:(CGRect)rect;
+
 +(instancetype)transitionWithAnchorRect:(CGRect)rect;
 
 @end
