@@ -8,7 +8,7 @@
 
 #import "ViewControllerA.h"
 #import "ViewControllerB.h"
-#import "XLBubbleTransition.h"
+#import "UIViewController+XLBubbleTransition.h"
 
 @interface ViewControllerA ()
 
@@ -29,8 +29,8 @@
     [button setImage:[UIImage imageNamed:@"Menu_icn"] forState:UIControlStateNormal];
     [self.view addSubview:button];
     
-    self.xl_pushTranstion = [XLBubblePushTransition transitionWithAnchorRect:button.frame];
-    self.xl_popTranstion = [XLBubblePopTransition transitionWithAnchorRect:button.frame];
+    self.xl_pushTranstion = [XLBubbleTransition transitionWithAnchorRect:button.frame];
+    self.xl_popTranstion = [XLBubbleTransition transitionWithAnchorRect:button.frame];
 }
 
 -(void)pushMethod{

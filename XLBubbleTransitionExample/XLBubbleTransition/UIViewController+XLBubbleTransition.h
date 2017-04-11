@@ -7,19 +7,16 @@
 //  GitHub ：https://github.com/mengxianliang/XLBubbleTransition
 
 #import <UIKit/UIKit.h>
-
-@class XLBubblePushTransition;
-@class XLBubblePopTransition;
-@class XLBubblePresentTransition;
-@class XLBubbleDismissTransition;
+#import "XLBubbleTransition.h"
 
 @interface UIViewController (XLBubbleTransition)<UINavigationControllerDelegate,UIViewControllerTransitioningDelegate>
 
-@property (nonatomic, retain) XLBubblePushTransition *xl_pushTranstion;
+@property (nonatomic, retain) XLBubbleTransition *xl_pushTranstion;
 
-@property (nonatomic, retain) XLBubblePopTransition *xl_popTranstion;
+@property (nonatomic, retain) XLBubbleTransition *xl_popTranstion;
 
-@property (nonatomic, retain) XLBubblePresentTransition *xl_presentTranstion;
-@property (nonatomic, retain) XLBubbleDismissTransition *xl_dismissTranstion;
+@property (nonatomic, retain) XLBubbleTransition *xl_presentTranstion;
+
+@property (nonatomic, retain) XLBubbleTransition *xl_dismissTranstion;
 
 @end

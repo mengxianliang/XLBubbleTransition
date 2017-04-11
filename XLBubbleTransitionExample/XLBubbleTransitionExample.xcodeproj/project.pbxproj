@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E47D59F1E9C711200A3DD64 /* XLBubblePresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E47D59E1E9C711200A3DD64 /* XLBubblePresentTransition.m */; };
-		5E47D5A21E9C712F00A3DD64 /* XLBubbleDismissTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E47D5A11E9C712F00A3DD64 /* XLBubbleDismissTransition.m */; };
+		5E47D5F21E9C82CD00A3DD64 /* XLBubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E47D5F11E9C82CD00A3DD64 /* XLBubbleTransition.m */; };
 		5ECCEA491E8F76790076E108 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA481E8F76790076E108 /* main.m */; };
 		5ECCEA4C1E8F76790076E108 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA4B1E8F76790076E108 /* AppDelegate.m */; };
 		5ECCEA4F1E8F76790076E108 /* ViewControllerA.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA4E1E8F76790076E108 /* ViewControllerA.m */; };
@@ -17,15 +16,11 @@
 		5ECCEA571E8F76790076E108 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ECCEA551E8F76790076E108 /* LaunchScreen.storyboard */; };
 		5ECCEA601E8F76940076E108 /* ViewControllerB.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA5F1E8F76940076E108 /* ViewControllerB.m */; };
 		5ECCEA691E8F76E00076E108 /* UIViewController+XLBubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA631E8F76E00076E108 /* UIViewController+XLBubbleTransition.m */; };
-		5ECCEA6A1E8F76E00076E108 /* XLBubblePopTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA651E8F76E00076E108 /* XLBubblePopTransition.m */; };
-		5ECCEA6B1E8F76E00076E108 /* XLBubblePushTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA671E8F76E00076E108 /* XLBubblePushTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5E47D59D1E9C711200A3DD64 /* XLBubblePresentTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLBubblePresentTransition.h; sourceTree = "<group>"; };
-		5E47D59E1E9C711200A3DD64 /* XLBubblePresentTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLBubblePresentTransition.m; sourceTree = "<group>"; };
-		5E47D5A01E9C712F00A3DD64 /* XLBubbleDismissTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLBubbleDismissTransition.h; sourceTree = "<group>"; };
-		5E47D5A11E9C712F00A3DD64 /* XLBubbleDismissTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLBubbleDismissTransition.m; sourceTree = "<group>"; };
+		5E47D5F01E9C82CD00A3DD64 /* XLBubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLBubbleTransition.h; sourceTree = "<group>"; };
+		5E47D5F11E9C82CD00A3DD64 /* XLBubbleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLBubbleTransition.m; sourceTree = "<group>"; };
 		5ECCEA441E8F76790076E108 /* XLBubbleTransitionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XLBubbleTransitionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ECCEA481E8F76790076E108 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5ECCEA4A1E8F76790076E108 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -40,11 +35,6 @@
 		5ECCEA5F1E8F76940076E108 /* ViewControllerB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerB.m; sourceTree = "<group>"; };
 		5ECCEA621E8F76E00076E108 /* UIViewController+XLBubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XLBubbleTransition.h"; sourceTree = "<group>"; };
 		5ECCEA631E8F76E00076E108 /* UIViewController+XLBubbleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XLBubbleTransition.m"; sourceTree = "<group>"; };
-		5ECCEA641E8F76E00076E108 /* XLBubblePopTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLBubblePopTransition.h; sourceTree = "<group>"; };
-		5ECCEA651E8F76E00076E108 /* XLBubblePopTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLBubblePopTransition.m; sourceTree = "<group>"; };
-		5ECCEA661E8F76E00076E108 /* XLBubblePushTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLBubblePushTransition.h; sourceTree = "<group>"; };
-		5ECCEA671E8F76E00076E108 /* XLBubblePushTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLBubblePushTransition.m; sourceTree = "<group>"; };
-		5ECCEA681E8F76E00076E108 /* XLBubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLBubbleTransition.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,15 +94,8 @@
 		5ECCEA611E8F76E00076E108 /* XLBubbleTransition */ = {
 			isa = PBXGroup;
 			children = (
-				5ECCEA681E8F76E00076E108 /* XLBubbleTransition.h */,
-				5ECCEA661E8F76E00076E108 /* XLBubblePushTransition.h */,
-				5ECCEA671E8F76E00076E108 /* XLBubblePushTransition.m */,
-				5ECCEA641E8F76E00076E108 /* XLBubblePopTransition.h */,
-				5ECCEA651E8F76E00076E108 /* XLBubblePopTransition.m */,
-				5E47D59D1E9C711200A3DD64 /* XLBubblePresentTransition.h */,
-				5E47D59E1E9C711200A3DD64 /* XLBubblePresentTransition.m */,
-				5E47D5A01E9C712F00A3DD64 /* XLBubbleDismissTransition.h */,
-				5E47D5A11E9C712F00A3DD64 /* XLBubbleDismissTransition.m */,
+				5E47D5F01E9C82CD00A3DD64 /* XLBubbleTransition.h */,
+				5E47D5F11E9C82CD00A3DD64 /* XLBubbleTransition.m */,
 				5ECCEA621E8F76E00076E108 /* UIViewController+XLBubbleTransition.h */,
 				5ECCEA631E8F76E00076E108 /* UIViewController+XLBubbleTransition.m */,
 			);
@@ -191,15 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5ECCEA6A1E8F76E00076E108 /* XLBubblePopTransition.m in Sources */,
-				5ECCEA6B1E8F76E00076E108 /* XLBubblePushTransition.m in Sources */,
-				5E47D59F1E9C711200A3DD64 /* XLBubblePresentTransition.m in Sources */,
 				5ECCEA601E8F76940076E108 /* ViewControllerB.m in Sources */,
 				5ECCEA691E8F76E00076E108 /* UIViewController+XLBubbleTransition.m in Sources */,
+				5E47D5F21E9C82CD00A3DD64 /* XLBubbleTransition.m in Sources */,
 				5ECCEA4F1E8F76790076E108 /* ViewControllerA.m in Sources */,
 				5ECCEA4C1E8F76790076E108 /* AppDelegate.m in Sources */,
 				5ECCEA491E8F76790076E108 /* main.m in Sources */,
-				5E47D5A21E9C712F00A3DD64 /* XLBubbleDismissTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

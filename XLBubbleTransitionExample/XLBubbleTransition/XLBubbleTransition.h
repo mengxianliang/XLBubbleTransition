@@ -1,18 +1,26 @@
 //
 //  XLBubbleTransition.h
-//  XLBubbleTransitionDemo
+//  XLBubbleTransitionTest
 //
-//  Created by MengXianLiang on 2017/4/1.
+//  Created by MengXianLiang on 2017/4/11.
 //  Copyright © 2017年 MengXianLiang. All rights reserved.
-//  GitHub ：https://github.com/mengxianliang/XLBubbleTransition
+//
 
-#ifndef XLBubbleTransition_h
-#define XLBubbleTransition_h
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-#import "UIViewController+XLBubbleTransition.h"
-#import "XLBubblePopTransition.h"
-#import "XLBubblePushTransition.h"
-#import "XLBubblePresentTransition.h"
-#import "XLBubbleDismissTransition.h"
+typedef NS_ENUM(NSInteger,XLBubbleTransitionType) {
+    XLBubbleTransitionTypeShow = 0,
+    XLBubbleTransitionTypeHide,
+};
 
-#endif /* XLBubbleTransition_h */
+@interface XLBubbleTransition : NSObject<UIViewControllerAnimatedTransitioning>
+
+//转场方式：显示/隐藏
+@property (nonatomic, assign) XLBubbleTransitionType transitionType;
+
+//初始化方法
+-(instancetype)initWithAnchorRect:(CGRect)anchorRect;
++(instancetype)transitionWithAnchorRect:(CGRect)anchorRect;
+
+@end
