@@ -28,7 +28,7 @@ self.xl_popTranstion = [XLBubbleTransition transitionWithAnchorRect:button.frame
 ```
 
 ##### 2、 通过Present和Dismiss进行切换时:
-首先在`ViewControllerB`中导入头文件：UIViewController+XLBubbleTransition.h
+首先在**ViewControllerB**中导入头文件：UIViewController+XLBubbleTransition.h
 <br>
 添加如下代码，设置Present和Dismiss设置动画，并设置锚点。
     
