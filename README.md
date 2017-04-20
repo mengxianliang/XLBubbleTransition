@@ -14,7 +14,7 @@ iOS ViewController间切换的转场动画
 
 ### 使用方法
 
-* 以**ViewControllerA**切换到**ViewControllerB**为例：
+(以**ViewControllerA**切换到**ViewControllerB**为例)
 
 ##### 1、 通过Navigation的Push和Pop进行切换时:
 
