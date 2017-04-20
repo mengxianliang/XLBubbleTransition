@@ -14,10 +14,11 @@ iOS ViewController间切换的转场动画
 
 ### 使用方法
 
-__以`ViewControllerA`切换到`ViewControllerB`为例：__
+* 以**ViewControllerA**切换到**ViewControllerB**为例：
 
 ##### 1、 通过Navigation的Push和Pop进行切换时:
-在`ViewControllerA`中导入头文件：UIViewController+XLBubbleTransition.h
+
+在**ViewControllerA**中导入头文件：UIViewController+XLBubbleTransition.h
 <br>
 添加如下代码，设置push和pop设置动画，并设置锚点。
 
