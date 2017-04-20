@@ -2,7 +2,7 @@
 
 iOS ViewController间切换的转场动画
 
-### 功能说明
+## 功能说明
 
 * 适用于ViewController通过UINavigation的Push和Pop切换时的转场动画。
 
@@ -16,7 +16,7 @@ iOS ViewController间切换的转场动画
 
 (以**ViewControllerA**切换到**ViewControllerB**为例)
 
-##### 1、 通过Navigation的Push和Pop进行切换时:
+#### 1、 通过Navigation的Push和Pop进行切换时:
 
 在**ViewControllerA**中导入头文件：**UIViewController+XLBubbleTransition.h**
 <br>
@@ -27,7 +27,7 @@ self.xl_pushTranstion = [XLBubbleTransition transitionWithAnchorRect:button.fram
 self.xl_popTranstion = [XLBubbleTransition transitionWithAnchorRect:button.frame];
 ```
 
-##### 2、 通过Present和Dismiss进行切换时:
+#### 2、 通过Present和Dismiss进行切换时:
 
 首先在**ViewControllerB**中导入头文件：**UIViewController+XLBubbleTransition.h**
 <br>
