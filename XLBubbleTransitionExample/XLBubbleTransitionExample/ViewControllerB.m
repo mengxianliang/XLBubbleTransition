@@ -7,6 +7,8 @@
 //
 
 #import "ViewControllerB.h"
+#import "UIViewController+XLBubbleTransition.h"
+
 
 @interface ViewControllerB ()
 
@@ -19,6 +21,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor colorWithRed:189/255.0 green:79/255.0 blue:70/255.0 alpha:1];
+    
     //示例label
     UILabel *label = [[UILabel alloc] initWithFrame:self.view.bounds];
     label.textColor = [UIColor whiteColor];
@@ -35,10 +38,19 @@
     button.layer.cornerRadius = button.bounds.size.width/2.0f;
     [button addTarget:self action:@selector(popMethod) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    
+    
+    //在ViewControllerB中添加Present和Dismiss的动画
+    self.xl_presentTranstion = [XLBubbleTransition transitionWithAnchorRect:button.frame];
+    self.xl_dismissTranstion = [XLBubbleTransition transitionWithAnchorRect:button.frame];
 }
 
 -(void)popMethod{
-    [self.navigationController popViewControllerAnimated:true];
+    if (self.navigationController) {
+        [self.navigationController popViewControllerAnimated:true];
+    }else{
+        [self dismissViewControllerAnimated:true completion:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

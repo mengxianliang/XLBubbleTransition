@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E23D7ED1EB0362E00A32C2B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E23D7EC1EB0362E00A32C2B /* ViewController.m */; };
 		5E47D5F21E9C82CD00A3DD64 /* XLBubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E47D5F11E9C82CD00A3DD64 /* XLBubbleTransition.m */; };
 		5ECCEA491E8F76790076E108 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA481E8F76790076E108 /* main.m */; };
 		5ECCEA4C1E8F76790076E108 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCEA4B1E8F76790076E108 /* AppDelegate.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E23D7EB1EB0362E00A32C2B /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5E23D7EC1EB0362E00A32C2B /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5E47D5F01E9C82CD00A3DD64 /* XLBubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLBubbleTransition.h; sourceTree = "<group>"; };
 		5E47D5F11E9C82CD00A3DD64 /* XLBubbleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLBubbleTransition.m; sourceTree = "<group>"; };
 		5ECCEA441E8F76790076E108 /* XLBubbleTransitionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XLBubbleTransitionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +73,8 @@
 			children = (
 				5ECCEA4A1E8F76790076E108 /* AppDelegate.h */,
 				5ECCEA4B1E8F76790076E108 /* AppDelegate.m */,
+				5E23D7EB1EB0362E00A32C2B /* ViewController.h */,
+				5E23D7EC1EB0362E00A32C2B /* ViewController.m */,
 				5ECCEA4D1E8F76790076E108 /* ViewControllerA.h */,
 				5ECCEA4E1E8F76790076E108 /* ViewControllerA.m */,
 				5ECCEA5E1E8F76940076E108 /* ViewControllerB.h */,
@@ -174,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E23D7ED1EB0362E00A32C2B /* ViewController.m in Sources */,
 				5ECCEA601E8F76940076E108 /* ViewControllerB.m in Sources */,
 				5ECCEA691E8F76E00076E108 /* UIViewController+XLBubbleTransition.m in Sources */,
 				5E47D5F21E9C82CD00A3DD64 /* XLBubbleTransition.m in Sources */,

@@ -10,6 +10,8 @@
 
 @interface ViewControllerA : UIViewController
 
+//是否通过push的方式加载ViewControllerB
+@property (nonatomic, assign) BOOL pushViewControllerB;
 
 @end
 

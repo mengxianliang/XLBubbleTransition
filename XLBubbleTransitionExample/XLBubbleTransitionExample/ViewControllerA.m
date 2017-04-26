@@ -29,13 +29,22 @@
     [button setImage:[UIImage imageNamed:@"Menu_icn"] forState:UIControlStateNormal];
     [self.view addSubview:button];
     
+    //在ViewControllerA中添加push和pop的动画
     self.xl_pushTranstion = [XLBubbleTransition transitionWithAnchorRect:button.frame];
     self.xl_popTranstion = [XLBubbleTransition transitionWithAnchorRect:button.frame];
 }
 
 -(void)pushMethod{
     ViewControllerB *vcB = [[ViewControllerB alloc] init];
-    [self.navigationController pushViewController:vcB animated:true];
+    if (_pushViewControllerB) {
+        [self.navigationController pushViewController:vcB animated:true];
+    }else{
+        [self presentViewController:vcB animated:true completion:nil];
+    }
+}
+
+-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.navigationController popViewControllerAnimated:true];
 }
 
 - (void)didReceiveMemoryWarning {
