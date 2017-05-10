@@ -7,7 +7,7 @@
 //
 
 #import "ViewControllerB.h"
-#import "UIViewController+XLBubbleTransition.h"
+#import "XLBubbleTransition.h"
 
 
 @interface ViewControllerB ()

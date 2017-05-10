@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "UIViewController+XLBubbleTransition.h"
 
 typedef NS_ENUM(NSInteger,XLBubbleTransitionType) {
     XLBubbleTransitionTypeShow = 0,

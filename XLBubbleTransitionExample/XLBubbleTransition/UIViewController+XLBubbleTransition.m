@@ -7,6 +7,7 @@
 //
 
 #import "UIViewController+XLBubbleTransition.h"
+#import "XLBubbleTransition.h"
 #import <objc/runtime.h>
 
 static NSString *XLPushTransitionKey = @"XLPushTransitionKey";
