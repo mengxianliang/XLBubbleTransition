@@ -1,20 +1,19 @@
 //
-//  ViewController1.m
+//  PushExampleViewControllerB.m
 //  XLBubbleTransitionExample
 //
-//  Created by MengXianLiang on 2017/4/1.
-//  Copyright © 2017年 MengXianLiang. All rights reserved.
+//  Created by MengXianLiang on 2019/8/8.
+//  Copyright © 2019 MengXianLiang. All rights reserved.
 //
 
-#import "ViewControllerB.h"
+#import "PushExampleViewControllerB.h"
 #import "XLBubbleTransition.h"
 
-
-@interface ViewControllerB ()
+@interface PushExampleViewControllerB ()
 
 @end
 
-@implementation ViewControllerB
+@implementation PushExampleViewControllerB
 
 - (void)viewDidLoad {
     
@@ -38,19 +37,10 @@
     button.layer.cornerRadius = button.bounds.size.width/2.0f;
     [button addTarget:self action:@selector(popMethod) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
-    
-    
-    //在ViewControllerB中添加Present和Dismiss的动画
-    self.xl_presentTranstion = [XLBubbleTransition transitionWithAnchorRect:button.frame];
-    self.xl_dismissTranstion = [XLBubbleTransition transitionWithAnchorRect:button.frame];
 }
 
--(void)popMethod{
-    if (self.navigationController) {
-        [self.navigationController popViewControllerAnimated:true];
-    }else{
-        [self dismissViewControllerAnimated:true completion:nil];
-    }
+- (void)popMethod {
+    [self.navigationController popViewControllerAnimated:   true];
 }
 
 - (void)didReceiveMemoryWarning {

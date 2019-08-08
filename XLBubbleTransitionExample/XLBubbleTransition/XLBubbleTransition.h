@@ -17,11 +17,10 @@ typedef NS_ENUM(NSInteger,XLBubbleTransitionType) {
 
 @interface XLBubbleTransition : NSObject<UIViewControllerAnimatedTransitioning>
 
-//转场方式：显示/隐藏
+//转场方式：进入/返回
 @property (nonatomic, assign) XLBubbleTransitionType transitionType;
 
 //初始化方法
--(instancetype)initWithAnchorRect:(CGRect)anchorRect;
-+(instancetype)transitionWithAnchorRect:(CGRect)anchorRect;
++ (instancetype)transitionWithAnchorRect:(CGRect)anchorRect;
 
 @end

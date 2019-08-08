@@ -1,20 +1,20 @@
 //
-//  ViewController.m
+//  PresentExampleViewControllerA.m
 //  XLBubbleTransitionExample
 //
-//  Created by MengXianLiang on 2017/4/1.
-//  Copyright © 2017年 MengXianLiang. All rights reserved.
+//  Created by MengXianLiang on 2019/8/8.
+//  Copyright © 2019 MengXianLiang. All rights reserved.
 //
 
-#import "ViewControllerA.h"
-#import "ViewControllerB.h"
+#import "PresentExampleViewControllerA.h"
+#import "PresentExampleViewControllerB.h"
 #import "XLBubbleTransition.h"
 
-@interface ViewControllerA ()
+@interface PresentExampleViewControllerA ()
 
 @end
 
-@implementation ViewControllerA
+@implementation PresentExampleViewControllerA
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,22 +25,14 @@
     button.center = CGPointMake(CGRectGetMidX(self.view.frame), CGRectGetMaxY(self.view.frame) - 60);
     button.layer.cornerRadius = 25.0f;
     button.backgroundColor = [UIColor colorWithRed:189/255.0 green:79/255.0 blue:70/255.0 alpha:1];
-    [button addTarget:self action:@selector(pushMethod) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(presentMethod) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"Menu_icn"] forState:UIControlStateNormal];
     [self.view addSubview:button];
-    
-    //在ViewControllerA中添加push和pop的动画
-    self.xl_pushTranstion = [XLBubbleTransition transitionWithAnchorRect:button.frame];
-    self.xl_popTranstion = [XLBubbleTransition transitionWithAnchorRect:button.frame];
 }
 
--(void)pushMethod{
-    ViewControllerB *vcB = [[ViewControllerB alloc] init];
-    if (_pushViewControllerB) {
-        [self.navigationController pushViewController:vcB animated:true];
-    }else{
-        [self presentViewController:vcB animated:true completion:nil];
-    }
+-(void)presentMethod {
+    PresentExampleViewControllerB *vcB = [[PresentExampleViewControllerB alloc] init];
+    [self presentViewController:vcB animated:true completion:nil];
 }
 
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

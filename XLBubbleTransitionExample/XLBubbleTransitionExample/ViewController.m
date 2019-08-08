@@ -7,12 +7,13 @@
 //
 
 #import "ViewController.h"
-#import "ViewControllerA.h"
+#import "PushExampleViewControllerA.h"
+#import "PresentExampleViewControllerA.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
-{
-    UITableView *_tableView;
-}
+
+@property (nonatomic, strong) UITableView *tableView;
+
 @end
 
 @implementation ViewController
@@ -38,34 +39,33 @@
     
 }
 
--(void)buildTable
-{
-    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    [self.view addSubview:_tableView];
+- (void)buildTable {
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
 }
 
 #pragma mark -
 #pragma mark TableViewDelegate&DataSource
 
--(NSArray *)titles{
+- (NSArray *)titles {
     return @[@"Push&Pop Animation Example",@"Present&Dismiss Animation Example"];
 }
 
--(NSString *)detailText{
+- (NSString *)detailText {
     return @"Click on the Screen to back !";
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 50;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self titles].count;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString* cellIdentifier = @"cell";
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
@@ -79,9 +79,21 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    ViewControllerA *vcA = [[ViewControllerA alloc] init];
-    vcA.pushViewControllerB = indexPath.row == 0;
-    [self.navigationController pushViewController:vcA animated:true];
+    switch (indexPath.row) {
+        case 0: {//push&pop example
+            PushExampleViewControllerA *vcA = [[PushExampleViewControllerA alloc] init];
+            [self.navigationController pushViewController:vcA animated:true];
+        }
+            break;
+        case 1: {//present&dismiss example
+            PresentExampleViewControllerA *vcA = [[PresentExampleViewControllerA alloc] init];
+            [self.navigationController pushViewController:vcA animated:true];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

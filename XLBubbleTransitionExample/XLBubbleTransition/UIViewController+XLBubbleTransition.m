@@ -18,59 +18,68 @@ static NSString *XLDismissTransitionKey = @"XLDismissTransitionKey";
 
 @implementation UIViewController (XLBubbleTransition)
 
-
 #pragma mark -
 #pragma mark Setter&Getter
 
--(void)setXl_pushTranstion:(XLBubbleTransition *)xl_pushTranstion{
+- (void)setXl_pushTranstion:(XLBubbleTransition *)xl_pushTranstion{
     if (xl_pushTranstion) {
         xl_pushTranstion.transitionType = XLBubbleTransitionTypeShow;
         self.navigationController.delegate = self;
-        objc_setAssociatedObject(self, &XLPushTransitionKey,
-                                 xl_pushTranstion, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        
+    }else {
+        self.navigationController.delegate = nil;
     }
+    objc_setAssociatedObject(self, &XLPushTransitionKey,
+                             xl_pushTranstion, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
--(XLBubbleTransition *)xl_pushTranstion{
+- (XLBubbleTransition *)xl_pushTranstion {
     return objc_getAssociatedObject(self, &XLPushTransitionKey);
 }
 
--(void)setXl_popTranstion:(XLBubbleTransition *)xl_popTranstion{
+- (void)setXl_popTranstion:(XLBubbleTransition *)xl_popTranstion {
     if (xl_popTranstion) {
         xl_popTranstion.transitionType = XLBubbleTransitionTypeHide;
         self.navigationController.delegate = self;
-        objc_setAssociatedObject(self, &XLPopTransitionKey,
-                                 xl_popTranstion, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        
+    }else {
+        self.navigationController.delegate = nil;
     }
+    objc_setAssociatedObject(self, &XLPopTransitionKey,
+                             xl_popTranstion, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
--(XLBubbleTransition *)xl_popTranstion{
+- (XLBubbleTransition *)xl_popTranstion {
     return objc_getAssociatedObject(self, &XLPopTransitionKey);
 }
 
--(void)setXl_presentTranstion:(XLBubbleTransition *)xl_presentTranstion{
+- (void)setXl_presentTranstion:(XLBubbleTransition *)xl_presentTranstion{
     if (xl_presentTranstion) {
         xl_presentTranstion.transitionType = XLBubbleTransitionTypeShow;
         self.transitioningDelegate = self;
-        objc_setAssociatedObject(self, &XLPresentTransitionKey,
-                                 xl_presentTranstion, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }else {
+        self.transitioningDelegate = nil;
     }
+    objc_setAssociatedObject(self, &XLPresentTransitionKey,
+                             xl_presentTranstion, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
--(XLBubbleTransition *)xl_presentTranstion{
+- (XLBubbleTransition *)xl_presentTranstion {
     return objc_getAssociatedObject(self, &XLPresentTransitionKey);
 }
 
--(void)setXl_dismissTranstion:(XLBubbleTransition *)xl_dismissTranstion{
+- (void)setXl_dismissTranstion:(XLBubbleTransition *)xl_dismissTranstion {
     if (xl_dismissTranstion) {
         xl_dismissTranstion.transitionType = XLBubbleTransitionTypeHide;
         self.transitioningDelegate = self;
-        objc_setAssociatedObject(self, &XLDismissTransitionKey,
-                                 xl_dismissTranstion, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }else {
+        self.transitioningDelegate = nil;
     }
+    objc_setAssociatedObject(self, &XLDismissTransitionKey,
+                             xl_dismissTranstion, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
--(XLBubbleTransition *)xl_dismissTranstion{
+- (XLBubbleTransition *)xl_dismissTranstion {
     return objc_getAssociatedObject(self, &XLDismissTransitionKey);
 }
 
@@ -89,11 +98,12 @@ static NSString *XLDismissTransitionKey = @"XLDismissTransitionKey";
 
 #pragma mark -
 #pragma mark Present和Dismiss转场动画
--(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
     return (id<UIViewControllerAnimatedTransitioning>)self.xl_presentTranstion;
 }
 
--(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
     return (id<UIViewControllerAnimatedTransitioning>)self.xl_dismissTranstion;
 }
+
 @end
